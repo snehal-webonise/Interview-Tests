@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <div class="container">
+    <div class="header"><h2>Open Standard Fixed Deposit</h2></div>
+    <div class="wrapper col-md-4 pull-left">
+        <ul>
+          <li>Debit Account Number : </li>
+          <li>Amount Of Deposit* : </li>
+          <li>Type Of Deposit* : </li>
+          <li>Tenure Of Deposit(Year)* : </li>
+          <li>Tenure Of Deposit(Months)* : </li>
+          <li>Tenure Of Deposit(days)* : </li>
+          <li>PAN : 
+          <label class="col-md-12">(PAN is compulsory for FD request of Rs.50,000/- and above)</label>
+          </li>
+          <li>Maturity Proceeds* : </li>
+          <li>Mobile Number** : </li>
+          <li>Email ** : </li>
+        </ul>
+    </div>
+
+    <div class="wrapper input-field col-md-4">
+       <ul>
+          <%= form_for :deposit do |f| %>
+  
+          <li> <%= f.text_field :acc_no, class: "form-control" %></li>
+          <li> <%= f.text_field :amount, class: "form-control" %></li>
+          <li> 
+            <%= f.select :type, options_for_select([['Current'],['Saving'],['Fixed']]), {}, { :class => 'form-control' } %>
+            </li>
+          <li> 
+            <%= f.select(:type1, options_for_select([ '1', true], ['2', false]), {},  { id: "sel2", class: 'form-control'}) %>
+          </li>
+          <li> 
+          <%= f.select(:type2, options_for_select([ true, false]), {}, { id: "sel3", class: 'form-control'}) %>
+          </li>
+          <li> <input class="form-control" type="text"/></li>
+          <li> <%= f.text_field :pan_no, class: "form-control" %></li>
+          <li> 
+          <%= f.select(:maturity_proceeds, options_for_select([ true, false]), {}, { id: "sel4", class: 'form-control'}) %>
+          </li>
+          <li> <%= f.text_field :mob_no, class: "form-control" %></li>
+          <li> <%= f.text_field :email, class: "form-control" %></li>
+        </ul>
+    </div>
+
+   <div class="wrapper comment-section col-md-4">
+     <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li>
+          <label>Fixed deposit Interest Rate</label>
+          </li>
+          <li></li>
+      </ul>
+      <%= f.submit 'Save', :class => 'btn btn-primary', id: 'form_submit' %>
+   <% end %>
+   </div>
+
+
+   </div>
