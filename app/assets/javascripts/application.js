@@ -38,6 +38,13 @@ $( document ).ready(function() {
            alert('Please Enter valid Email.')
            return false;
         }
+
+        if($('#deposit_amount').val() > 50000){
+          if($('#deposit_pan_no').val() == ''){
+            alert('please enter Pan no.');
+            return false;
+          }  
+        }
     }); 	
 });
 
