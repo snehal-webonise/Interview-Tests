@@ -15,3 +15,24 @@
 //= require turbolinks
 //= require_tree .
 //= require livevalidation
+
+$( document ).ready(function() {
+	$('#form_submit').click(function(){
+    	if($('#deposit_amount').val() == ''){
+    		alert('please enter Amount');
+    		return false;
+    	}
+    	if($('#sel4').val() == ''){
+    		alert('please select Maturity Proceeds');
+    		return false;
+    	}
+    	if($('#deposit_mob_no').val() == ''){
+    		alert('please enter Mobile number');
+    		return false;
+    	}
+    	if($('#deposit_email').val() == ''){
+    		alert('please enter Email');
+    		return false;
+    	}
+    }); 	
+});
